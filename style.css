@@ -1,0 +1,11 @@
+.delete::after {
+    content: '(detete)';
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+}
+
+.edit::after {
+    content: '(edit)';
+    color: rgb(34, 133, 31);
+    cursor: pointer;
+}

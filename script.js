@@ -9,23 +9,25 @@ if (localStorage.tasks) {
     tasks = JSON.parse(localStorage.tasks);
 }
 
-// for (let task of tasks) {
-//     let newTask = document.createElement('p');
-//     newTask.classList.add('result__item');
-//     newTask.innerHTML = `<input type="checkbox" id="done"><span class="text">${task}</span> <span class="edit"></span><span class="delete"></span>`;
-//     result.prepend(newTask);
-// }
+for (let task of tasks) {
+    let newTask = document.createElement('p');
+    newTask.classList.add('result__item');
+    newTask.innerText = task;
+    result.prepend(newTask);
+}
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-        let newTask = document.createElement('p');
-        newTask.classList.add('result__item');
-        task = input.value;
-        newTask.innerHTML = `<input type="checkbox" id="done"><span class="text">${task}</span> <span class="edit"></span><span class="delete"></span>`;
-        result.prepend(newTask);
-        tasks.push(task);
-        localStorage.tasks = JSON.stringify(tasks);
-        input.value = '';
+    let newTask = document.createElement('p');
+
+    tasks.push(input.value);
+    localStorage.tasks = JSON.stringify(tasks);
+
+    newTask.classList.add('result__item');
+    // task = input.value;
+    newTask.innerHTML = `<input type="checkbox" id="done"><span class="text">${input.value}</span> <span class="edit"></span><span class="delete"></span>`;
+    result.prepend(newTask);
+    input.value = '';
 
     const checkbox = newTask.querySelector("#done");
 

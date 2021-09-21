@@ -60,15 +60,24 @@ function editTask(createdTask) {
         newForm.appendChild(newInput);
         newForm.appendChild(newButton);
         createdTask.append(newForm);
+        // tasks.forEach((i) =>{
         newForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            tasks.forEach((i) => {
+                tasks.splice(i, 1);
+            });
             text.innerText = newInput.value;
             tasks.push(newInput.value);
             localStorage.tasks = JSON.stringify(tasks);
+
             // localStorage.removeItem(newForm);
             newForm.reset();
             createdTask.removeChild(newForm);
+
+
         });
+        // })
+
     });
 }
 

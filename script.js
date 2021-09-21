@@ -60,14 +60,18 @@ function editTask(createdTask) {
         newForm.appendChild(newInput);
         newForm.appendChild(newButton);
         createdTask.append(newForm);
-        // tasks.forEach((i) =>{
+
+        // tasks.forEach((i) => {
+
         newForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            tasks.forEach((i) => {
-                tasks.splice(i, 1);
-            });
-            text.innerText = newInput.value;
-            tasks.push(newInput.value);
+            const editedTask = tasks.find(task => task.id === id);
+            editedTask.title = newTitle;
+            tasks.splice(id, 1);
+            newTitle = newInput.value;
+
+            text.innerText = newTitle;
+            tasks.push(newTitle);
             localStorage.tasks = JSON.stringify(tasks);
 
             // localStorage.removeItem(newForm);
@@ -76,6 +80,7 @@ function editTask(createdTask) {
 
 
         });
+
         // })
 
     });

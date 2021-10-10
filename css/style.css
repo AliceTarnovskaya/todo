@@ -378,7 +378,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -475,4 +475,126 @@ button:hover {
   font-size: 14px;
   margin-bottom: 20px;
   margin-right: 20px;
+}
+
+.weather-mini {
+  background: -webkit-gradient(linear, left bottom, right top, from(#fa2a84), to(#8b2eb6));
+  background: linear-gradient(to top right, #fa2a84, #8b2eb6);
+  max-width: 300px;
+  min-width: 300px;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  cursor: pointer;
+}
+
+.weather-mini__weather {
+  min-width: 50%;
+  margin-bottom: 10px;
+}
+.weather-mini__weather img {
+  max-width: 30px;
+}
+
+.weather-mini__date {
+  min-width: 50%;
+}
+
+.weather-mini__temp {
+  min-width: 50%;
+  font-size: 44px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.weather-mini__city {
+  min-width: 50%;
+  text-align: right;
+}
+
+.arrow-icon {
+  background-color: transparent;
+  display: block;
+  padding: 0.5em;
+  margin: 1em auto 0;
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.left-bar {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  display: block;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+  float: right;
+  border-radius: 2px;
+}
+.left-bar:after {
+  content: "";
+  background-color: white;
+  width: 20px;
+  height: 3px;
+  display: block;
+  float: right;
+  border-radius: 6px 10px 10px 6px;
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  z-index: -1;
+}
+
+.right-bar {
+  position: absolute;
+  background-color: transparent;
+  top: 0px;
+  left: 16px;
+  display: block;
+  -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+  float: right;
+  border-radius: 2px;
+}
+.right-bar:after {
+  content: "";
+  background-color: white;
+  width: 20px;
+  height: 3px;
+  display: block;
+  float: right;
+  border-radius: 10px 6px 6px 10px;
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  z-index: -1;
+}
+
+.open .left-bar:after {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(-70deg);
+          transform: rotate(-70deg);
+}
+.open .right-bar:after {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: rotate(70deg);
+          transform: rotate(70deg);
 }

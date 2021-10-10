@@ -1,6 +1,4 @@
-.weather {}
-
-.weather-mini {
+.weather {
     background: linear-gradient(to top right, #fa2a84, #8b2eb6);
     max-width: 300px;
     min-width: 300px;
@@ -8,12 +6,17 @@
     top: 10px;
     right: 20px;
     z-index: 1000;
+    padding: 10px;
+    border-radius:10px;
+    color: white;
+}
+
+.weather-mini {   
+    
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 10px;
     border-radius: 10px;
-    color: white;
     align-items: flex-start;
     cursor: pointer;
 }
@@ -29,9 +32,6 @@
 
 .weather-mini__date {
     min-width: 50%;
-    // margin-bottom: 10px;
-
-
 }
 
 .weather-mini__temp {
@@ -40,38 +40,38 @@
     margin-bottom: 10px;
     font-weight: 600;
     text-align: right;
-
-    // &::after {
-    //     content: "°C";
-    // }
-
 }
 
 .weather-mini__city {
     min-width: 50%;
-    text-align: right;
-    // margin-bottom: 10px;
-
+    text-align: right;  
 }
 
-.weather__container {}
+.weather__container {
+    padding: 20px 0;
+    display: none;
+}
 
-
+.weather__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        max-width: 30px;
+    } 
+}
 
 
 // ARROW
 
 .arrow-icon {
     background-color: transparent;
-    // height: 2.8em;
-    // width: 2.8em;
     display: block;
     padding: 0.5em;
     margin: 1em auto 0;
     position: relative;
     cursor: pointer;
     border-radius: 4px;
-
 }
 
 .left-bar {
@@ -79,8 +79,6 @@
     background-color: transparent;
     top: 0;
     left: 0;
-    // width: 40px;
-    // height: 10px;
     display: block;
     transform: rotate(35deg);
     float: right;
@@ -104,8 +102,6 @@
     background-color: transparent;
     top: 0px;
     left: 16px;
-    // width: 40px;
-    // height: 10px;
     display: block;
     transform: rotate(-35deg);
     float: right;
@@ -134,5 +130,12 @@
         transform-origin: center center;
         transform: rotate(70deg);
     }
+}
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }

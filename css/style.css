@@ -477,7 +477,7 @@ button:hover {
   margin-right: 20px;
 }
 
-.weather-mini {
+.weather {
   background: -webkit-gradient(linear, left bottom, right top, from(#fa2a84), to(#8b2eb6));
   background: linear-gradient(to top right, #fa2a84, #8b2eb6);
   max-width: 300px;
@@ -486,6 +486,12 @@ button:hover {
   top: 10px;
   right: 20px;
   z-index: 1000;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.weather-mini {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,9 +500,7 @@ button:hover {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 10px;
   border-radius: 10px;
-  color: white;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -526,6 +530,26 @@ button:hover {
 .weather-mini__city {
   min-width: 50%;
   text-align: right;
+}
+
+.weather__container {
+  padding: 20px 0;
+  display: none;
+}
+
+.weather__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.weather__row img {
+  max-width: 30px;
 }
 
 .arrow-icon {
@@ -597,4 +621,12 @@ button:hover {
           transform-origin: center center;
   -webkit-transform: rotate(70deg);
           transform: rotate(70deg);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
